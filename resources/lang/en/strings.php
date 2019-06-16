@@ -91,6 +91,7 @@ return [
 
     'frontend' => [
         'test' => 'Test',
+        'loading' => 'Loading...',
 
         'tests' => [
             'based_on' => [

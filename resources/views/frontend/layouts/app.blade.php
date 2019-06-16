@@ -23,19 +23,16 @@
         @stack('after-styles')
     </head>
     <body>
-        @include('includes.partials.demo')
+        <div id="frontend"></div>
 
-        <div id="frontend">
-            @include('includes.partials.logged-in-as')
-            @include('frontend.includes.nav')
-        </div><!-- #app -->
+        <div id="footer"></div>
 
         <!-- Scripts -->
         @stack('before-scripts')
         {!! script('js/manifest.js') !!}
         {!! script('js/vendor.js') !!}
         {!! script('js/frontend.js') !!}
-        <script src="{{ mix('js/app.js') }}" ></script>
+        {!! script('js/app.js') !!}
         @stack('after-scripts')
 
         @include('includes.partials.ga')

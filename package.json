@@ -15,31 +15,33 @@
         "tdd": "cross-var $npm_execpath run test -- --watch --notify"
     },
     "devDependencies": {
+        "@babel/core": "^7.1.2",
+        "@babel/plugin-proposal-class-properties": "^7.4.4",
+        "@babel/preset-env": "^7.1.0",
         "@babel/preset-react": "^7.0.0",
-        "@coreui/coreui": "^2.1.9",
-        "@fortawesome/fontawesome-free": "^5.8.1",
-        "@vue/test-utils": "^1.0.0-beta.29",
-        "axios": "^0.18.0",
-        "babel-core": "^7.0.0-bridge.0",
-        "babel-jest": "^24.5.0",
+        "@babel/preset-stage-0": "^7.0.0",
+        "@babel/register": "^7.0.0",
+        "@coreui/coreui": "^2.1.12",
+        "@fortawesome/fontawesome-free": "^5.9.0",
+        "axios": "^0.18.1",
+        "babel-jest": "^24.8.0",
         "bootstrap": "^4.3.1",
         "cross-env": "^5.2.0",
         "cross-var": "^1.1.0",
-        "jest": "^24.5.0",
+        "jest": "^24.8.0",
         "jquery": "^3.4.1",
-        "laravel-mix": "^4.0.15",
+        "laravel-mix": "^4.0.16",
         "lodash": "^4.17.11",
         "pace": "github:HubSpot/pace#v1.0.2",
         "perfect-scrollbar": "^1.4.0",
-        "popper.js": "^1.14.7",
-        "react": "^16.2.0",
-        "react-dom": "^16.2.0",
+        "popper.js": "^1.15.0",
+        "react": "^16.4.2",
+        "react-dom": "^16.4.2",
+        "react-scripts": "1.1.4",
         "resolve-url-loader": "^2.3.2",
-        "sass": "^1.17.3",
+        "sass": "^1.21.0",
         "sass-loader": "^7.1.0",
-        "sweetalert2": "^8.7.0",
-        "vue-jest": "^3.0.4",
-        "vue-template-compiler": "^2.6.10"
+        "sweetalert2": "^8.12.1"
     },
     "browserslist": {
         "development": "last 1 version",
@@ -54,15 +56,20 @@
             "^@/(.*)$": "<rootDir>/resources/js/$1"
         },
         "moduleFileExtensions": [
-            "js",
-            "vue"
+            "js"
         ],
         "transform": {
-            "^.+\\.js$": "babel-jest",
-            ".*\\.(vue)$": "vue-jest"
+            "^.+\\.js$": "babel-jest"
         }
     },
     "engines": {
         "node": ">=6.0.0"
+    },
+    "dependencies": {
+        "acorn": "^6.1.1",
+        "babel": "^6.23.0",
+        "react-router-dom": "^5.0.1",
+        "react-spinners": "^0.5.4",
+        "webpack": "^4.34.0"
     }
 }

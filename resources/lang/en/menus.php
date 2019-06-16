@@ -50,7 +50,7 @@ return [
         ],
     ],
 
-    'language-picker' => [
+    'picker' => [
         'language' => 'Language',
         /*
          * Add the new language to this array.

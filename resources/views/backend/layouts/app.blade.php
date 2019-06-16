@@ -32,14 +32,14 @@
         <main class="main">
             @include('includes.partials.demo')
             @include('includes.partials.logged-in-as')
+
             {!! Breadcrumbs::render() !!}
 
-            <div id="backend" class="container-fluid">
-            </div><!--container-fluid-->
-        </main><!--main-->
+            <div id="backend" class="container-fluid"></div>
+        </main>
 
         @include('backend.includes.aside')
-    </div><!--app-body-->
+    </div>
 
     @include('backend.includes.footer')
 
@@ -48,7 +48,7 @@
     {!! script('js/manifest.js') !!}
     {!! script('js/vendor.js') !!}
     {!! script('js/backend.js') !!}
-    <script src="{{ mix('js/app.js') }}" ></script>
+    {!! script(mix('js/app.js')) !!}
     @stack('after-scripts')
 </body>
 </html>

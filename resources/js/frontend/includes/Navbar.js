@@ -12,12 +12,18 @@ export default class Navbar extends Component
         this.user   = this.props.data.user;
 
         this.state = {
-            isOpen: false
+            isOpen: false,
         };
 
+        this.toggleOpen = () => this.setState({ isOpen: !this.state.isOpen });
     }
 
-    toggleOpen = () => this.setState({ isOpen: !this.state.isOpen });
+
+    handleLangChange = (e) => {
+        var lang = e.value;
+        this.props.data(locale);
+    }
+
 
     /**
      * Returns each language given by this.app.languages
@@ -34,9 +40,9 @@ export default class Navbar extends Component
                     languages.map((lang, index) => {
                         if (lang != this.app.current_language && lang != "picker") {
                             return <small key={index}>
-                                <Link to={'/lang/' + languages[index]} className="dropdown-item">
+                                <a href={'/api/lang/' + languages[index]} onClick={this.handleLangChange} className="dropdown-item">
                                     {languages[index].toUpperCase()} - {this.lang.menus.picker.langs[lang]}
-                                </Link>
+                                </a>
                                 {/* menus.language-picker.langs */}
                             </small>;
                         }
@@ -73,7 +79,7 @@ export default class Navbar extends Component
                         </li>
 
                         { (this.user.guest === true) ? (
-                            <React.Fragment>
+                            <React.Fragment>p
                                 <li className="nav-item"><Link to="/login" className="nav-link {{ active_class(Active::checkRoute('frontend.auth.login')) }}">{this.lang.navs.frontend.login}</Link></li>
                                 <li className="nav-item"><Link to="/register" className="nav-link {{ active_class(Active::checkRoute('frontend.auth.register')) }}">{this.lang.navs.frontend.register}</Link></li>
                             </React.Fragment>

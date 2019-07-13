@@ -2,26 +2,20 @@
 
 namespace App\Http\Controllers;
 
-/**
- * Class LanguageController.
- */
-class LanguageController extends Controller
+use Illuminate\Http\Request;
+use Illuminate\Support\Str;
+
+class ApiController extends Controller
 {
-    protected $json;
-
-    public function __construct()
-    {
-
-    }
-
     /**
-     * @param $locale
+     * Update the authenticated user's API token.
      *
-     * @return \Illuminate\Http\RedirectResponse
+     * @param  \Illuminate\Http\Request  $request
+     * @return array
      */
-    public function swap($locale)
+    public function config()
     {
-        $this->json = [
+        return response()->json([
             'app'  => [
                 'name'             => app_name(),
                 'current_language' => app()->getLocale(),
@@ -48,15 +42,18 @@ class LanguageController extends Controller
 
             ],
             'locale' => config('locale'),
-        ];
+        ], 200);
+    }
+
+    public function swap($locale)
+    {
         if (array_key_exists($locale, config('locale.languages'))) {
             session()->put('locale', $locale);
         }
-        #dump($this->json);
 
-        #dd(session()->all());
 
-        return response()->json( [
+
+        return response()->json([
             'app'  => [
                 'name'             => app_name(),
                 'current_language' => app()->getLocale(),
@@ -83,8 +80,7 @@ class LanguageController extends Controller
 
             ],
             'locale' => config('locale'),
-        ]
-        #return back();
-        );
+        ], 200);
+
     }
 }

@@ -23,9 +23,8 @@
         @stack('after-styles')
     </head>
     <body>
-        <div id="frontend"></div>
 
-        <div id="footer"></div>
+        <div id="frontend" data-lang="[]"></div>
 
         <!-- Scripts -->
         @stack('before-scripts')

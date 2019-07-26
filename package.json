@@ -15,12 +15,12 @@
         "tdd": "cross-var $npm_execpath run test -- --watch --notify"
     },
     "devDependencies": {
-        "@babel/core": "^7.5.4",
-        "@babel/plugin-proposal-class-properties": "^7.5.0",
-        "@babel/preset-env": "^7.5.4",
+        "@babel/core": "^7.5.5",
+        "@babel/plugin-proposal-class-properties": "^7.5.5",
+        "@babel/preset-env": "^7.5.5",
         "@babel/preset-react": "^7.0.0",
         "@babel/preset-stage-0": "^7.0.0",
-        "@babel/register": "^7.0.0",
+        "@babel/register": "^7.5.5",
         "@coreui/coreui": "^2.1.12",
         "@fortawesome/fontawesome-free": "^5.9.0",
         "axios": "^0.18.1",
@@ -31,7 +31,7 @@
         "jest": "^24.8.0",
         "jquery": "^3.4.1",
         "laravel-mix": "^4.1.2",
-        "lodash": "^4.17.14",
+        "lodash": "^4.17.15",
         "pace": "github:HubSpot/pace#v1.0.2",
         "perfect-scrollbar": "^1.4.0",
         "popper.js": "^1.15.0",
@@ -39,9 +39,9 @@
         "react-dom": "^16.4.2",
         "react-scripts": "^3.0.1",
         "resolve-url-loader": "^2.3.2",
-        "sass": "^1.22.4",
+        "sass": "^1.22.7",
         "sass-loader": "^7.1.0",
-        "sweetalert2": "^8.13.4"
+        "sweetalert2": "^8.14.0"
     },
     "browserslist": {
         "development": "last 1 version",
@@ -66,12 +66,13 @@
         "node": ">=6.0.0"
     },
     "dependencies": {
-        "acorn": "^6.2.0",
+        "acorn": "^6.2.1",
         "babel": "^6.23.0",
+        "react-redux": "^7.1.0",
         "react-router-dom": "^5.0.1",
-        "react-spinners": "^0.5.8",
+        "react-spinners": "^0.5.13",
         "redux": "^4.0.4",
         "typescript": "^3.5.3",
-        "webpack": "^4.35.3"
+        "webpack": "^4.38.0"
     }
 }

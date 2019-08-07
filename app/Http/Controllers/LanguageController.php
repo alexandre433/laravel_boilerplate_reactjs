@@ -21,6 +21,11 @@ class LanguageController extends Controller
      */
     public function swap($locale)
     {
+        dd(array_key_exists($locale, config('locale.languages')));
+        if (array_key_exists($locale, config('locale.languages'))) {
+            session()->put('locale', $locale);
+            app()->setLocale($locale);
+        }
         $this->json = [
             'app'  => [
                 'name'             => app_name(),
@@ -49,9 +54,7 @@ class LanguageController extends Controller
             ],
             'locale' => config('locale'),
         ];
-        if (array_key_exists($locale, config('locale.languages'))) {
-            session()->put('locale', $locale);
-        }
+
         #dump($this->json);
 
         #dd(session()->all());

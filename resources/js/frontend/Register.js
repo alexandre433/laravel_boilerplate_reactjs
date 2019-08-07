@@ -1,12 +1,19 @@
 import React, { Component } from 'react';
-import ReactDOM from 'react-dom';
+import { connect } from 'react-redux';
+import { getConfig } from './actions/config';
 
-export default class Register extends Component
+class Register extends Component
 {
+    componentWillMount()
+    {
+        this.props.getConfig();
+    }
+
     render() {
-        // Register page
         return (
             <div></div>
         );
     }
 }
+
+export default connect(null, { getConfig })(Register);

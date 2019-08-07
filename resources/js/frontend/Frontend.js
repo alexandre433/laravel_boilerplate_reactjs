@@ -3,6 +3,12 @@ import ReactDOM from 'react-dom';
 import Navbar from './includes/Navbar';
 import { ClipLoader } from 'react-spinners';
 import { Route, Link, BrowserRouter as Router } from 'react-router-dom';
+
+import { Provider } from 'react-redux';
+import store from './store';
+
+import Register from './Register';
+
 //mport Loader from '../resources/Loader';
 
 /**
@@ -10,30 +16,10 @@ import { Route, Link, BrowserRouter as Router } from 'react-router-dom';
  * ReactJS I do need to store most of my data into the localstorage so that i can
  * manipulate it, with ReactJS
  */
-export default class Frontend extends Component
+class Frontend extends Component
 {
-    constructor(props)
-    {
-        super(props);
-        /* fetch('/api/locale')
-            .then(response => response.json())
-            .then(response => this.locale = response ); */
-
-
-        fetch('/api/lang/' + 'en')
-                .then(res => res.json())
-                .then(res => this.setState(res));
-    }
-
-    handleLocale = (localeValue) => {
-        this.locale = localeValue;
-    };
-
-    render()
-    {
-        console.log(this.state);
-        // Frontend Page
-        return (this.state === null) ? (
+    // Frontend Page
+        /* return (this.state === null) ? (
             <div className="container-fluid">
             <div className="row justify-content-center">
             <div className="text-center align-middle" style={{ position:'fixed',top:'50%',left:'50%',transform: 'translate(-50%, -50%)' }}>
@@ -73,10 +59,20 @@ export default class Frontend extends Component
                         footer
                     </div>
                 </div>
-            )
+            ) */
+
+    render()
+    {
+        return(
+            <Provider store={store}>
+                <Register />
+                <Navbar />
+                <h1>
+                    Hello
+                </h1>
+            </Provider>
+        );
     }
 }
 
-if (document.getElementById('frontend')) {
-    ReactDOM.render(<Frontend />, document.getElementById('frontend'));
-}
+export default Frontend;

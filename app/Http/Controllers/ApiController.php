@@ -49,9 +49,8 @@ class ApiController extends Controller
     {
         if (array_key_exists($locale, config('locale.languages'))) {
             session()->put('locale', $locale);
+            app()->setLocale($locale);
         }
-
-
 
         return response()->json([
             'app'  => [

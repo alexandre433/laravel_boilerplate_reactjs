@@ -27,3 +27,4 @@ output.txt
 coverage.xml
 /coverage
 .phpunit.result.cache
+public/js/app.js
